@@ -6,6 +6,7 @@ TagManager:
   tags:
   - empty
   - level
+  - selectable
   layers:
   - Default
   - TransparentFX
