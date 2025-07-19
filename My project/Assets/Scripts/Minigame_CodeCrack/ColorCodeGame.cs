@@ -48,7 +48,7 @@ public class ColorCodeGame : MonoBehaviour
         {
             if (currentGuess[i] == secretCode[i])
             {
-                result += "🟩 ";
+                result += "O ";
                 usedSecret[i] = true;
                 usedGuess[i] = true;
             }
@@ -62,22 +62,26 @@ public class ColorCodeGame : MonoBehaviour
             {
                 if (!usedSecret[j] && currentGuess[i] == secretCode[j])
                 {
-                    result += "🟨 ";
+                    result += "? ";
                     usedSecret[j] = true;
+                    usedGuess[i] = true;
                     break;
                 }
             }
         }
 
-        while (result.Split(' ').Length - 1 < 4)
-            result += "❌ ";
+        for(int i = 0; i < 4; i++)
+        {
+            if (!usedGuess[i])
+                result += "X ";
+        }
 
         GameObject feedback = Instantiate(feedbackTextPrefab, feedbackPanel);
         feedback.GetComponent<TMPro.TextMeshProUGUI>().text = result.Trim();
 
-        if (result.Trim() == "🟩 🟩 🟩 🟩")
+        if (result.Trim() == "O O O O")
         {
-            Debug.Log("Zugang gewährt!");
+            Debug.Log("Access permitted");
         }
     }
 }
