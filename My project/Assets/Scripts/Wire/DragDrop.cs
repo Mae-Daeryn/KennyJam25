@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -6,31 +7,31 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
 {
 
     private RectTransform rectTransform;
-
-
+    [SerializeField] private Canvas canvas;
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
     }
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("test");
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-
-        Debug.Log("test");
-        rectTransform.anchoredPosition += eventData.delta;
+        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
     public void OnBeginDrag(PointerEventData eventData)
     {
+        GameObject neu = Instantiate(gameObject, transform.parent);
+        RectTransform rtOriginal = GetComponent<RectTransform>();
+        RectTransform rtNeu = neu.GetComponent<RectTransform>();
 
-        Debug.Log("test");
+        rtNeu.anchoredPosition = rtOriginal.anchoredPosition;
+        rtNeu.sizeDelta = rtOriginal.sizeDelta;
+        rtNeu.localScale = rtOriginal.localScale;
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("test");
 
     }
 }
