@@ -1,14 +1,19 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class checkPuzzle : MonoBehaviour
+public class checkPuzzle : MonoBehaviour, IPointerClickHandler
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+
+    public void OnClick(PointerEventData eventData)
+    {
+        if()
+    }
+
     void Update()
     {
         
