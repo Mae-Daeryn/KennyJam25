@@ -64,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
         if (moveDirection == Vector3.zero)
         {
             animator.SetFloat("Speed", 0);
+            
         }
     }
 }
