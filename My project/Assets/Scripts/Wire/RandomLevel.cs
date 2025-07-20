@@ -20,6 +20,16 @@ public class RandomLevel : MonoBehaviour
             randomLevel.SetActive(true);
             current.currentlevel = randomLevel;
         }
+        else
+        {
+            foreach (var item in levels)
+            {
+                item.SetActive(false);
+            }
+
+            current.currentlevel.SetActive(true);
+        }
 
     }
+
 }
