@@ -12,11 +12,14 @@ public class RandomLevel : MonoBehaviour
     public CursorMode cursorMode = CursorMode.Auto;
 
     public GameObject time;
+    public GameObject gameover;
 
     public static Boolean startTimer = false;
 
     float timeRemaining = 60f;
     public static Boolean timerIsRunning = true;
+
+    public AudioSource timerrunout;
 
     void Update()
     {
@@ -30,13 +33,16 @@ public class RandomLevel : MonoBehaviour
                 {
                     timeRemaining -= Time.deltaTime;
                     time.GetComponent<Text>().text = Mathf.Ceil(timeRemaining).ToString(); ;
-                    
+                    if(timeRemaining < 10)
+                    {
+                        timerrunout.Play();
+                    }
                 }
                 else
                 {
-                    Debug.Log("Timer Done!");
                     timeRemaining = 0;
                     timerIsRunning = false;
+                    gameover.SetActive(true);
 
                 }
             }
@@ -45,6 +51,7 @@ public class RandomLevel : MonoBehaviour
 
     void Start()
     {
+        gameover.SetActive(false);
         Cursor.visible = true;
 
         Cursor.lockState = CursorLockMode.None;
