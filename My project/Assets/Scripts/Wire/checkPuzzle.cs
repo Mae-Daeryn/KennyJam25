@@ -82,7 +82,7 @@ public class checkPuzzle : MonoBehaviour, IPointerClickHandler
         yield return new WaitForSeconds(2);
         correct_text.SetActive(false);
         notification.SetActive(false);
-        SceneManager.LoadScene(sceneBuildIndex: 1);
+        SceneManager.LoadScene("kenny");
         current.currentlevel = null;
         current.done = true;
     }
