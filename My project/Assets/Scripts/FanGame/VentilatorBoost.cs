@@ -26,7 +26,7 @@ public class VentilatorBoost : MonoBehaviour
             SetFanState(index, false);
         }
 
-        statusText.text = "🔧 Find the correct fan sequence!";
+        statusText.text = "Find the correct fan sequence!";
     }
 
     void ToggleFan(int index)
@@ -42,18 +42,18 @@ public class VentilatorBoost : MonoBehaviour
             if (currentStep >= correctSequence.Length)
             {
                 gameActive = false;
-                statusText.text = "✅ Correct sequence! Cooling stabilized.";
+                statusText.text = "Correct sequence! Cooling stabilized.";
             }
             else
             {
-                statusText.text = $"✅ Step {currentStep}/{fanButtons.Length}";
+                statusText.text = $"Step {currentStep}/{fanButtons.Length}";
             }
         }
         else
         {
             ResetFans();
             currentStep = 0;
-            statusText.text = "❌ Wrong! Restart the sequence.";
+            statusText.text = "Wrong! Restart the sequence.";
         }
     }
 
