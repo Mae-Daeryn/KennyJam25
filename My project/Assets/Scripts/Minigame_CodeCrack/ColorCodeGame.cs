@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ColorCodeGame : MonoBehaviour
 {
@@ -79,24 +80,20 @@ public class ColorCodeGame : MonoBehaviour
         GameObject feedbackObj = Instantiate(feedbackTextPrefab, feedbackPanel);
         feedbackObj.GetComponent<TMPro.TextMeshProUGUI>().text = string.Join(" ", feedback);
 
-        // Nur die letzten 2 Feedback-Zeilen behalten
-        while (feedbackPanel.childCount > 2)
+        int maxFeedback = 2;
+        int toRemove = feedbackPanel.childCount - maxFeedback;
+        for (int i = 0;i < toRemove;i++)
         {
-            Destroy(feedbackPanel.GetChild(0).gameObject);
+            Destroy(feedbackPanel.GetChild(i).gameObject);
         }
+
 
         
         if (string.Join(" ", feedback) == "O O O O")
         {
             Debug.Log("Zugang gewährt!");
+            SceneManager.LoadScene("kenny");
         }
     }
-
-
-
-
-
-
-
 
 }
