@@ -25,13 +25,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        MovePlayer();
+        if (!EscapeMenu.isPaused)
+        {
+            MovePlayer();
+        }
     }
 
     void Update()
     {
-        WASDInput();
-        transform.rotation = orientation.rotation;
+        if (!EscapeMenu.isPaused) 
+        {
+            WASDInput();
+            transform.rotation = orientation.rotation;
+        }
 
     }
 

@@ -17,5 +17,10 @@ public class Taskbar : MonoBehaviour
             task1.GetComponent<TextMeshProUGUI>().text = "<s>" + task1.GetComponent<TextMeshProUGUI>().text + "</s>";
             checkbox1.GetComponent<Image>().color = Color.green;
         }
+        if (current.doneCodeCrack == true)
+        {
+            task2.GetComponent<TextMeshProUGUI>().text = "<s>" + task2.GetComponent<TextMeshProUGUI>().text + "</s>";
+            checkbox2.GetComponent<Image>().color = Color.green;
+        }
     }
 }

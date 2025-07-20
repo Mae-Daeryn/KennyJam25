@@ -22,6 +22,13 @@ public class resume : MonoBehaviour, IPointerClickHandler
             ColorCodeGame.timerIsRunning = true;
 
         }
+        else if (SceneManager.GetActiveScene().name.Equals("kenny"))
+        {
+
+            Cursor.visible = false;
+
+            Cursor.lockState = CursorLockMode.Locked;
+        }
         volume.currentVolume = slider.GetComponent<Slider>().value;
     }
 

@@ -40,13 +40,21 @@ public class EscapeMenu : MonoBehaviour
             {
                 ColorCodeGame.timerIsRunning = true;
 
-            }
+            }else if(SceneManager.GetActiveScene().name.Equals("kenny"))
+        {
+
+            Cursor.visible = false;
+
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
         isPaused = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
         if (SceneManager.GetActiveScene().name.Equals("Wire_game"))
         {
             RandomLevel.timerIsRunning = false;

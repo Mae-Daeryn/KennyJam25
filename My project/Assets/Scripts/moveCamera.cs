@@ -7,7 +7,9 @@ public class moveCamera : MonoBehaviour
 
     void Update()
     {
+        if(!EscapeMenu.isPaused) { 
         transform.position = cameraPosition.position;
         transform.rotation = cameraPosition.rotation;
+        }
     }
 }
