@@ -2949,8 +2949,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d44f704919cce524ca8d0af5e4cf42ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensX: 400
-  sensY: 400
+  sensX: 100
+  sensY: 100
   orientation: {fileID: 1457845595}
   pausemenu: {fileID: 1487144892}
   gameover: {fileID: 809504473}
@@ -3629,6 +3629,22 @@ PrefabInstance:
     - target: {fileID: 34191055335082504, guid: a49dacae4e425894b9846b529f258cab, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 460485975817564101, guid: a49dacae4e425894b9846b529f258cab, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 460485975817564101, guid: a49dacae4e425894b9846b529f258cab, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 460485975817564101, guid: a49dacae4e425894b9846b529f258cab, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 640
+      objectReference: {fileID: 0}
+    - target: {fileID: 460485975817564101, guid: a49dacae4e425894b9846b529f258cab, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 360
       objectReference: {fileID: 0}
     - target: {fileID: 605869027009945321, guid: a49dacae4e425894b9846b529f258cab, type: 3}
       propertyPath: m_AnchorMax.y
