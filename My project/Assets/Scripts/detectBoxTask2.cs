@@ -1,22 +1,17 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class detectBox : MonoBehaviour
+public class detectBoxTask2 : MonoBehaviour
 {
 
     public GameObject interactText;
     private bool playerInside = false;
 
-    private void Start()
-    {
-        interactText.SetActive(false);
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (current.done == false)
+            if (current.doneCodeCrack == false)
             {
                 playerInside = true;
                 interactText.SetActive(true);
@@ -35,9 +30,9 @@ public class detectBox : MonoBehaviour
 
     private void Update()
     {
-        if (playerInside && !current.done && Input.GetKeyDown(KeyCode.E))
+        if (playerInside && !current.doneCodeCrack && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene("Wire_game");
+            SceneManager.LoadScene("CodeCrack_game");
         }
     }
 }
