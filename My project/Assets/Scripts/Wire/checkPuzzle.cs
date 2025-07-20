@@ -78,6 +78,7 @@ public class checkPuzzle : MonoBehaviour, IPointerClickHandler
     {
         notification.SetActive(true);
         correct_text.SetActive(true);
+        RandomLevel.timerIsRunning = false;
         yield return new WaitForSeconds(2);
         correct_text.SetActive(false);
         notification.SetActive(false);

@@ -7,14 +7,14 @@ public class Taskbar : MonoBehaviour
 
     public GameObject checkbox1;
     public GameObject checkbox2;
-    public TextMeshPro task1;
-    public TextMeshPro task2;
+    public GameObject task1;
+    public GameObject task2;
 
     void Start()
     {
         if(current.done == true)
         {
-            task1.fontStyle = FontStyles.Strikethrough;
+            task1.GetComponent<TextMeshProUGUI>().text = "<s>" + task1.GetComponent<TextMeshProUGUI>().text + "</s>";
             checkbox1.GetComponent<Image>().color = Color.green;
         }
     }

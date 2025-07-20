@@ -8,7 +8,11 @@ public class tutorial : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
+        RandomLevel.startTimer = true;
+        Debug.Log("Test");
         tut.SetActive(false);
+
     }
+
 
 }
