@@ -7,6 +7,6 @@ public class current
 {
     private static GameObject level;
     public static GameObject currentlevel = null;
-    public static Boolean done = true;
+    public static Boolean done = false;
 
 }
