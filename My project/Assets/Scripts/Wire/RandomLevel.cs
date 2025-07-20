@@ -60,7 +60,6 @@ public class RandomLevel : MonoBehaviour
         Cursor.visible = true;
 
         Cursor.lockState = CursorLockMode.None;
-        Cursor.SetCursor(customCursor, hotspot, cursorMode);
         if (current.currentlevel == null)
         {
             foreach (var item in levels)

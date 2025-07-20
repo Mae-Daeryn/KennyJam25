@@ -41,7 +41,6 @@ public class ColorCodeGame : MonoBehaviour
         Cursor.visible = true;
 
         Cursor.lockState = CursorLockMode.None;
-        Cursor.SetCursor(customCursor, hotspot, cursorMode);
         GenerateSecretCode();
         confirmButton.onClick.AddListener(CheckGuess);
         UpdateSlots();

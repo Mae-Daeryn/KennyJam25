@@ -20,7 +20,6 @@ public class playerCamera : MonoBehaviour
     {
         gameover.SetActive(false);
         pausemenu.SetActive(false);
-        Cursor.SetCursor(customCursor, hotspot, cursorMode);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

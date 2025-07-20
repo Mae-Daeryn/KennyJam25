@@ -38,7 +38,6 @@ public class VentilatorBoost : MonoBehaviour
         Cursor.visible = true;
 
         Cursor.lockState = CursorLockMode.None;
-        Cursor.SetCursor(customCursor, hotspot, cursorMode);
         isFanOn = new bool[fanButtons.Length];
         correctSequence = GenerateRandomSequence(fanButtons.Length);
 
