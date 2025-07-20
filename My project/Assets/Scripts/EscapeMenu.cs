@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EscapeMenu : MonoBehaviour
@@ -31,14 +32,32 @@ public class EscapeMenu : MonoBehaviour
         volume.currentVolume = slider.GetComponent<Slider>().value;
         pauseMenuUI.SetActive(false);
         isPaused = false;
-        RandomLevel.timerIsRunning = true;
+        if(SceneManager.GetActiveScene().name.Equals("Wire_game"))
+        {
+            RandomLevel.timerIsRunning = true;
+
+        }else if (SceneManager.GetActiveScene().name.Equals("CodeCrack_game"))
+            {
+                ColorCodeGame.timerIsRunning = true;
+
+            }
     }
 
     public void Pause()
     {
         pauseMenuUI.SetActive(true);
         isPaused = true;
-        RandomLevel.timerIsRunning = false;
+        if (SceneManager.GetActiveScene().name.Equals("Wire_game"))
+        {
+            RandomLevel.timerIsRunning = false;
+
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("CodeCrack_game"))
+        {
+            ColorCodeGame.timerIsRunning = false;
+
+        }
+
         slider.GetComponent<Slider>().value = volume.currentVolume;
     }
 

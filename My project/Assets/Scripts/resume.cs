@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class resume : MonoBehaviour, IPointerClickHandler
@@ -11,7 +12,16 @@ public class resume : MonoBehaviour, IPointerClickHandler
     {
         pauseMenuUI.SetActive(false);
         EscapeMenu.isPaused = false;
-        RandomLevel.timerIsRunning = true;
+        if (SceneManager.GetActiveScene().name.Equals("Wire_game"))
+        {
+            RandomLevel.timerIsRunning = true;
+
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("CodeCrack_game"))
+        {
+            ColorCodeGame.timerIsRunning = true;
+
+        }
         volume.currentVolume = slider.GetComponent<Slider>().value;
     }
 

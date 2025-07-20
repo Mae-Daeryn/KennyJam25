@@ -6,6 +6,8 @@ public class ClosePanel : MonoBehaviour
 
     public void CloseThePanel()
     {
+        ColorCodeGame.startTimer = true;
+        Debug.Log("test");
         panelClose.SetActive(false);
     }
 }
