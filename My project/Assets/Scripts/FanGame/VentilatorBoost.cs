@@ -2,6 +2,8 @@
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class VentilatorBoost : MonoBehaviour
 {
@@ -42,7 +44,7 @@ public class VentilatorBoost : MonoBehaviour
             if (currentStep >= correctSequence.Length)
             {
                 gameActive = false;
-                statusText.text = "Correct sequence! Cooling stabilized.";
+                StartCoroutine(ShowSuccessAndLoadScene());
             }
             else
             {
@@ -88,4 +90,11 @@ public class VentilatorBoost : MonoBehaviour
 
         return indices.ToArray();
     }
+    IEnumerator ShowSuccessAndLoadScene()
+    {
+        statusText.text = "Correct sequence! Cooling stabilized.";
+        yield return new WaitForSeconds(2f);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("kenny");
+    }
+
 }
