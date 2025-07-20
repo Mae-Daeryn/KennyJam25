@@ -9,9 +9,8 @@ public class checkPuzzle : MonoBehaviour, IPointerClickHandler
     }
 
 
-    public void OnClick(PointerEventData eventData)
+    public void OnPointerClick(PointerEventData eventData)
     {
-        if()
     }
 
     void Update()

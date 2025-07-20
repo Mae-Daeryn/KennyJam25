@@ -8,13 +8,18 @@ public class RandomLevel : MonoBehaviour
 
     void Start()
     {
-        foreach (var item in levels)
-        {
-            item.SetActive(false);
-        }
 
-        GameObject randomLevel = levels[Random.Range(0, levels.Count)];
-        randomLevel.SetActive(true);
+        if(current.currentlevel == null)
+        {
+            foreach (var item in levels)
+            {
+                item.SetActive(false);
+            }
+
+            GameObject randomLevel = levels[Random.Range(0, levels.Count)];
+            randomLevel.SetActive(true);
+            current.currentlevel = randomLevel;
+        }
 
     }
 }

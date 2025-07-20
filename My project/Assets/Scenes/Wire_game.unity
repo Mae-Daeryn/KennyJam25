@@ -1421,7 +1421,7 @@ GameObject:
   - component: {fileID: 247665288}
   m_Layer: 5
   m_Name: 4
-  m_TagString: selectable
+  m_TagString: 4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4177,7 +4177,7 @@ GameObject:
   - component: {fileID: 815142550}
   m_Layer: 5
   m_Name: 9
-  m_TagString: selectable
+  m_TagString: 9
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5480,7 +5480,7 @@ GameObject:
   - component: {fileID: 1022651733}
   m_Layer: 5
   m_Name: 1
-  m_TagString: selectable
+  m_TagString: 1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7287,7 +7287,7 @@ GameObject:
   - component: {fileID: 1484538171}
   m_Layer: 5
   m_Name: 2
-  m_TagString: selectable
+  m_TagString: 2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8609,7 +8609,7 @@ GameObject:
   - component: {fileID: 1781652391}
   m_Layer: 5
   m_Name: 5
-  m_TagString: selectable
+  m_TagString: 5
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8862,7 +8862,7 @@ GameObject:
   - component: {fileID: 1810729237}
   m_Layer: 5
   m_Name: 3
-  m_TagString: selectable
+  m_TagString: 3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9332,7 +9332,7 @@ GameObject:
   - component: {fileID: 1872463681}
   m_Layer: 5
   m_Name: 6
-  m_TagString: selectable
+  m_TagString: 6
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9510,7 +9510,7 @@ GameObject:
   - component: {fileID: 1931042384}
   m_Layer: 5
   m_Name: 8
-  m_TagString: selectable
+  m_TagString: 8
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10139,7 +10139,7 @@ GameObject:
   - component: {fileID: 2101547279}
   m_Layer: 5
   m_Name: 7
-  m_TagString: selectable
+  m_TagString: 7
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
