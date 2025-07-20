@@ -92,7 +92,7 @@ public class VentilatorBoost : MonoBehaviour
     }
     IEnumerator ShowSuccessAndLoadScene()
     {
-        statusText.text = "Correct sequence! Cooling stabilized.";
+        statusText.text = "Correct sequence! \n Cooling stabilized.";
         yield return new WaitForSeconds(2f);
         UnityEngine.SceneManagement.SceneManager.LoadScene("kenny");
     }
