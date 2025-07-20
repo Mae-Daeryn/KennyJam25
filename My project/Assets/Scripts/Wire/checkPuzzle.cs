@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class checkPuzzle : MonoBehaviour, IPointerClickHandler
@@ -80,6 +81,9 @@ public class checkPuzzle : MonoBehaviour, IPointerClickHandler
         yield return new WaitForSeconds(2);
         correct_text.SetActive(false);
         notification.SetActive(false);
+        SceneManager.LoadScene(sceneBuildIndex: 1);
+        current.currentlevel = null;
+        current.done = true;
     }
 
 }
