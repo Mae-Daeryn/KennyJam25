@@ -40,48 +40,63 @@ public class ColorCodeGame : MonoBehaviour
 
     void CheckGuess()
     {
-        string result = "";
-        bool[] usedSecret = new bool[4];
-        bool[] usedGuess = new bool[4];
+        string[] feedback = new string[4] { "X", "X", "X", "X" };
+        int[] secretColorCounts = new int[colorSprites.Length];
+        int[] guessColorCounts = new int[colorSprites.Length];
 
+        // Schritt 1: Zählen wie oft jede Farbe im Secret vorkommt
+        for (int i = 0; i < 4; i++)
+        {
+            secretColorCounts[secretCode[i]]++;
+        }
+
+        // Schritt 2: Exakte Übereinstimmungen markieren (O)
         for (int i = 0; i < 4; i++)
         {
             if (currentGuess[i] == secretCode[i])
             {
-                result += "O ";
-                usedSecret[i] = true;
-                usedGuess[i] = true;
+                feedback[i] = "O";
+                secretColorCounts[currentGuess[i]]--;
+                guessColorCounts[currentGuess[i]]++;
             }
         }
 
+        // Schritt 3: Farben am falschen Platz erkennen (?)
         for (int i = 0; i < 4; i++)
         {
-            if (usedGuess[i]) continue;
+            if (feedback[i] != "X") continue;
 
-            for (int j = 0; j < 4; j++)
+            int color = currentGuess[i];
+            if (secretColorCounts[color] > 0)
             {
-                if (!usedSecret[j] && currentGuess[i] == secretCode[j])
-                {
-                    result += "? ";
-                    usedSecret[j] = true;
-                    usedGuess[i] = true;
-                    break;
-                }
+                feedback[i] = "?";
+                secretColorCounts[color]--;
+                guessColorCounts[color]++;
             }
         }
 
-        for(int i = 0; i < 4; i++)
+        // Feedback anzeigen
+        GameObject feedbackObj = Instantiate(feedbackTextPrefab, feedbackPanel);
+        feedbackObj.GetComponent<TMPro.TextMeshProUGUI>().text = string.Join(" ", feedback);
+
+        // Nur die letzten 2 Feedback-Zeilen behalten
+        while (feedbackPanel.childCount > 2)
         {
-            if (!usedGuess[i])
-                result += "X ";
+            Destroy(feedbackPanel.GetChild(0).gameObject);
         }
 
-        GameObject feedback = Instantiate(feedbackTextPrefab, feedbackPanel);
-        feedback.GetComponent<TMPro.TextMeshProUGUI>().text = result.Trim();
-
-        if (result.Trim() == "O O O O")
+        
+        if (string.Join(" ", feedback) == "O O O O")
         {
-            Debug.Log("Access permitted");
+            Debug.Log("Zugang gewährt!");
         }
     }
+
+
+
+
+
+
+
+
 }
