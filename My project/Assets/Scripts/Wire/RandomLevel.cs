@@ -20,6 +20,8 @@ public class RandomLevel : MonoBehaviour
     public static Boolean timerIsRunning = true;
 
     public AudioSource timerrunout;
+    public AudioSource gameovermusic;
+    private int lastSecondPlayed = -1;
 
     void Update()
     {
@@ -33,9 +35,11 @@ public class RandomLevel : MonoBehaviour
                 {
                     timeRemaining -= Time.deltaTime;
                     time.GetComponent<Text>().text = Mathf.Ceil(timeRemaining).ToString(); ;
-                    if(timeRemaining < 10)
+                    int currentSecond = Mathf.FloorToInt(timeRemaining);
+                    if (timeRemaining < 10f && currentSecond != lastSecondPlayed)
                     {
                         timerrunout.Play();
+                        lastSecondPlayed = currentSecond;
                     }
                 }
                 else
@@ -43,6 +47,7 @@ public class RandomLevel : MonoBehaviour
                     timeRemaining = 0;
                     timerIsRunning = false;
                     gameover.SetActive(true);
+                    gameovermusic.Play();
 
                 }
             }
