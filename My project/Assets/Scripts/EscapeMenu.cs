@@ -40,7 +40,13 @@ public class EscapeMenu : MonoBehaviour
             {
                 ColorCodeGame.timerIsRunning = true;
 
-            }else if(SceneManager.GetActiveScene().name.Equals("kenny"))
+            }
+        else if (SceneManager.GetActiveScene().name.Equals("Ventilator_game"))
+        {
+            VentilatorBoost.timerIsRunning = true;
+
+        }
+        else if(SceneManager.GetActiveScene().name.Equals("kenny"))
         {
 
             Cursor.visible = false;
@@ -63,6 +69,11 @@ public class EscapeMenu : MonoBehaviour
         else if (SceneManager.GetActiveScene().name.Equals("CodeCrack_game"))
         {
             ColorCodeGame.timerIsRunning = false;
+
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("Ventilator_game"))
+        {
+            VentilatorBoost.timerIsRunning = false;
 
         }
 

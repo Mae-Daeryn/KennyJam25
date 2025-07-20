@@ -1,5 +1,7 @@
+using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class tutorial : MonoBehaviour, IPointerClickHandler
 {
@@ -8,9 +10,17 @@ public class tutorial : MonoBehaviour, IPointerClickHandler
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        RandomLevel.startTimer = true;
-        Debug.Log("Test");
-        tut.SetActive(false);
+        if(SceneManager.GetActiveScene().name.Equals("Ventilator_game"))
+        {
+
+            VentilatorBoost.startTimer = true;
+            tut.SetActive(false);
+        }
+        if (SceneManager.GetActiveScene().name.Equals("Wire_game"))
+        {
+            RandomLevel.startTimer = true;
+            tut.SetActive(false);
+        }
 
     }
 

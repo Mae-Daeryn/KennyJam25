@@ -9,6 +9,7 @@ public class current
     public static GameObject currentlevel = null;
     public static Boolean done = false;
     public static Boolean doneCodeCrack = false;
+    public static Boolean donevent = false;
     public static int gamelevel = 1;
 
 }

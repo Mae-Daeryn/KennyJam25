@@ -22,6 +22,11 @@ public class resume : MonoBehaviour, IPointerClickHandler
             ColorCodeGame.timerIsRunning = true;
 
         }
+        else if (SceneManager.GetActiveScene().name.Equals("Ventilator_game"))
+        {
+            VentilatorBoost.timerIsRunning = true;
+
+        }
         else if (SceneManager.GetActiveScene().name.Equals("kenny"))
         {
 

@@ -4,6 +4,7 @@ using TMPro;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System;
 
 public class VentilatorBoost : MonoBehaviour
 {
@@ -14,9 +15,30 @@ public class VentilatorBoost : MonoBehaviour
     private int currentStep = 0;
     private bool gameActive = true;
     private bool[] isFanOn;
+    public Vector2 hotspot = Vector2.zero;
+    public UnityEngine.CursorMode cursorMode = UnityEngine.CursorMode.Auto;
+    public Texture2D customCursor;
+    public GameObject time;
+    public GameObject gameover;
+
+    public GameObject wrongsound;
+    public GameObject correctsound; 
+    public static Boolean startTimer = false;
+
+    float timeRemaining = 60f;
+    public static Boolean timerIsRunning = true;
+
+    public AudioSource timerrunout;
+    private int lastSecondPlayed = -1;
+    public AudioSource gameovermusic;
 
     void Start()
     {
+        gameover.SetActive(false);
+        Cursor.visible = true;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.SetCursor(customCursor, hotspot, cursorMode);
         isFanOn = new bool[fanButtons.Length];
         correctSequence = GenerateRandomSequence(fanButtons.Length);
 
@@ -48,6 +70,7 @@ public class VentilatorBoost : MonoBehaviour
             }
             else
             {
+                correctsound.GetComponent<AudioSource>().Play();
                 statusText.text = $"Step {currentStep}/{fanButtons.Length}";
             }
         }
@@ -55,6 +78,7 @@ public class VentilatorBoost : MonoBehaviour
         {
             ResetFans();
             currentStep = 0;
+            wrongsound.GetComponent<AudioSource>().Play();
             statusText.text = "Wrong! Restart the sequence.";
         }
     }
@@ -82,7 +106,7 @@ public class VentilatorBoost : MonoBehaviour
 
         for (int i = 0; i < length; i++)
         {
-            int rand = Random.Range(i, length);
+            int rand = UnityEngine.Random.Range(i, length);
             int temp = indices[i];
             indices[i] = indices[rand];
             indices[rand] = temp;
@@ -92,9 +116,40 @@ public class VentilatorBoost : MonoBehaviour
     }
     IEnumerator ShowSuccessAndLoadScene()
     {
+        correctsound.GetComponent<AudioSource>().Play();
         statusText.text = "Correct sequence! \n Cooling stabilized.";
+        timerIsRunning = false;
         yield return new WaitForSeconds(2f);
+        current.donevent = true;
         UnityEngine.SceneManagement.SceneManager.LoadScene("kenny");
     }
+    void Update()
+    {
+        if (startTimer == true)
+        {
 
+            if (timerIsRunning)
+            {
+                if (timeRemaining > 0)
+                {
+                    timeRemaining -= Time.deltaTime;
+                    time.GetComponent<Text>().text = Mathf.Ceil(timeRemaining).ToString(); ;
+                    int currentSecond = Mathf.FloorToInt(timeRemaining);
+                    if (timeRemaining < 10f && currentSecond != lastSecondPlayed)
+                    {
+                        timerrunout.Play();
+                        lastSecondPlayed = currentSecond;
+                    }
+                }
+                else
+                {
+                    timeRemaining = 0;
+                    timerIsRunning = false;
+                    gameover.SetActive(true);
+                    gameovermusic.Play();
+
+                }
+            }
+        }
+    }
 }
