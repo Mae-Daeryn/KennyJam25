@@ -1,9 +1,11 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class detectBox : MonoBehaviour
 {
 
     public GameObject interactText;
+    private bool playerInside = false;
 
     private void Start()
     {
@@ -14,7 +16,12 @@ public class detectBox : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            interactText.SetActive(true);
+            Debug.Log("Test");
+            if (current.done == false)
+            {
+                playerInside = true;
+                interactText.SetActive(true);
+            }
         }
     }
 
@@ -22,7 +29,16 @@ public class detectBox : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            playerInside = false;
             interactText.SetActive(false);
+        }
+    }
+
+    private void Update()
+    {
+        if (playerInside && !current.done && Input.GetKeyDown(KeyCode.E))
+        {
+            SceneManager.LoadScene("Wire_game");
         }
     }
 }

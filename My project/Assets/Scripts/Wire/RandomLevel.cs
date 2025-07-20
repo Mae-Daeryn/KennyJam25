@@ -8,8 +8,10 @@ public class RandomLevel : MonoBehaviour
 
     void Start()
     {
+        Cursor.visible = true;
 
-        if(current.currentlevel == null)
+        Cursor.lockState = CursorLockMode.None;
+        if (current.currentlevel == null)
         {
             foreach (var item in levels)
             {
