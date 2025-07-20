@@ -3161,7 +3161,6 @@ MonoBehaviour:
   tileOptions:
   - panel: {fileID: 836224022}
     options:
-    - 3
     - 8
     - 9
   - panel: {fileID: 1823852569}

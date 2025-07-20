@@ -14,6 +14,9 @@ public class EscapeMenu : MonoBehaviour
     }
     void Update()
     {
+        if (nextLevel.isnext == false)
+        {
+            
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -23,6 +26,7 @@ public class EscapeMenu : MonoBehaviour
             else
             {
                 Pause();
+            }
             }
         }
     }

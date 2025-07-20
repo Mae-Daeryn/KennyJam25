@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!EscapeMenu.isPaused)
+        if (!EscapeMenu.isPaused && !nextLevel.isnext)
         {
             MovePlayer();
         }
@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (!EscapeMenu.isPaused) 
+        if (!EscapeMenu.isPaused && !nextLevel.isnext) 
         {
             WASDInput();
             transform.rotation = orientation.rotation;

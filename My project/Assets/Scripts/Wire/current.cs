@@ -11,5 +11,4 @@ public class current
     public static Boolean doneCodeCrack = false;
     public static Boolean donevent = false;
     public static int gamelevel = 1;
-
 }

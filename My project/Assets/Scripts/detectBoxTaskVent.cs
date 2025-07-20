@@ -11,7 +11,7 @@ public class detectBoxTaskVent : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (current.doneCodeCrack == false)
+            if (current.donevent == false)
             {
                 playerInside = true;
                 interactText.SetActive(true);
@@ -30,7 +30,7 @@ public class detectBoxTaskVent : MonoBehaviour
 
     private void Update()
     {
-        if (playerInside && !current.doneCodeCrack && Input.GetKeyDown(KeyCode.E))
+        if (playerInside && !current.donevent && Input.GetKeyDown(KeyCode.E))
         {
             SceneManager.LoadScene("Ventilator_game");
         }

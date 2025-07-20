@@ -25,7 +25,7 @@ public class VentilatorBoost : MonoBehaviour
     public GameObject correctsound; 
     public static Boolean startTimer = false;
 
-    float timeRemaining = 60f;
+    float timeRemaining = 65f - (current.gamelevel * 5);
     public static Boolean timerIsRunning = true;
 
     public AudioSource timerrunout;
@@ -118,7 +118,8 @@ public class VentilatorBoost : MonoBehaviour
     {
         correctsound.GetComponent<AudioSource>().Play();
         statusText.text = "Correct sequence! \n Cooling stabilized.";
-        timerIsRunning = false;
+        startTimer = false;
+        float timeRemaining = 65f - ((current.gamelevel + 1) * 5);
         yield return new WaitForSeconds(2f);
         current.donevent = true;
         UnityEngine.SceneManagement.SceneManager.LoadScene("kenny");

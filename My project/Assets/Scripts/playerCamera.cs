@@ -27,7 +27,7 @@ public class playerCamera : MonoBehaviour
 
     void Update()
     {
-        if (!EscapeMenu.isPaused)
+        if (!EscapeMenu.isPaused && !nextLevel.isnext)
         {
             float mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
             float mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;

@@ -16,7 +16,7 @@ public class RandomLevel : MonoBehaviour
 
     public static Boolean startTimer = false;
 
-    float timeRemaining = 60f;
+    float timeRemaining = 65f - (current.gamelevel*5);
     public static Boolean timerIsRunning = true;
 
     public AudioSource timerrunout;

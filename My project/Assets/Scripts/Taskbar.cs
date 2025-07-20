@@ -35,6 +35,9 @@ public class Taskbar : MonoBehaviour
         if (current.donevent == true && current.doneCodeCrack == true && current.done == true)
         {
             levelSuccess.SetActive(true);
+            nextLevel.isnext = true;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {

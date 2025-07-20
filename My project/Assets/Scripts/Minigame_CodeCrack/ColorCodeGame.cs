@@ -25,7 +25,7 @@ public class ColorCodeGame : MonoBehaviour
 
     public static Boolean startTimer = false;
 
-    float timeRemaining = 60f;
+    float timeRemaining = 65f - (current.gamelevel * 5);
     public static Boolean timerIsRunning = true;
 
     public AudioSource timerrunout;
@@ -149,8 +149,9 @@ public class ColorCodeGame : MonoBehaviour
         if (string.Join(" ", feedback) == "O O O O")
         {
             correctsound.GetComponent<AudioSource>().Play();
-            timerIsRunning = false;
-                current.doneCodeCrack = true;
+            startTimer = false;
+            float timeRemaining = 65f - ((current.gamelevel +1) * 5);
+            current.doneCodeCrack = true;
                 SceneManager.LoadScene("kenny");
         }
         else
