@@ -4413,6 +4413,7 @@ GameObject:
   - component: {fileID: 1981958545}
   - component: {fileID: 1981958547}
   - component: {fileID: 1981958546}
+  - component: {fileID: 1981958548}
   m_Layer: 0
   m_Name: taskbar
   m_TagString: Untagged
@@ -4482,6 +4483,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1981958544}
   m_CullTransparentMesh: 1
+--- !u!114 &1981958548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981958544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22f327ad92a4f324a836ad07296b99a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  checkbox1: {fileID: 321481958}
+  checkbox2: {fileID: 1452632487}
+  task1: {fileID: 0}
+  task2: {fileID: 0}
 --- !u!1 &1994840304
 GameObject:
   m_ObjectHideFlags: 0
